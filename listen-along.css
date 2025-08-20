@@ -1,0 +1,38 @@
+.listeningAlong_e0cf27 {
+  margin: -17px;
+  background: transparent !important;
+  position: relative;
+}
+.listeningAlong_e0cf27 .title_b6c092 {
+  position: absolute;
+  top: 95px;
+  left: 96px;
+  font-size: 10px;
+  z-index: 9999;
+}
+.listeningAlong_e0cf27 .subtext__339d0 {
+  position: absolute;
+  top: 98px;
+  font-size: 10px;
+  color: #00CA4E;
+  left: 165px;
+  z-index: 9999;
+}
+.container_b2d72f .avatar_e0cf27 {
+  position: absolute;
+  top: 55px;
+  right: 195px;
+  transform: rotate(42deg);
+  z-index: 100;
+}
+.container_b2d72f .avatar_b2d72f {
+  position: absolute;
+  top: 16px;
+  right: 243px;
+  transform: rotate(46deg) scale(1.2);
+}
+.icons_e0cf27 {
+  position: relative;
+  transform: scale(0.8) translateY(95px) translateX(-100px);
+  z-index: 9999;  
+}
