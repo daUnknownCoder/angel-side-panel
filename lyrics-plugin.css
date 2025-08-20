@@ -1,3 +1,4 @@
+/*Main Lyrics Box*/
 .vc-spotify-lyrics {
   margin-top: 2px;
   margin-bottom: 10px;
@@ -6,12 +7,16 @@
   }
   border-radius: 10px;
 }
+
+/*Previous Lyrics css*/
 .vc-spotify-lyrics-prev {
   opacity: 0.5;
   font-family: 'Changa';
   filter: blur(1px);
   transition: all 0.8s ease;
 }
+
+/*Current Lyrics css*/
 .vc-spotify-lyrics-current {
   font-size: 15px;
   font-family: 'Nova Square';
@@ -29,12 +34,15 @@
   transition: all 0.8s ease;
 }
 
+/*Next Lyrics css*/
 .vc-spotify-lyrics-next {
   opacity: 0.5;
   font-family: 'Changa';
   filter: blur(1px);
   transition: all 0.8s ease;
 }
+
+/*Music Note*/
 .vc-spotify-lyrics-music-note {
   opacity: 0.75;
 }
