@@ -1,3 +1,4 @@
+/*Css*/
 :root, #vc-spotify-player {
   --bg-color-discord: var(--bg-overlay-floating, var(--background-base-low, var(--background-secondary-alt)));
   --bg-color-cover: hsl(from var(--vc-spotify-main-color) h clamp(40, s, 100) clamp(50, l, 70));
@@ -7,6 +8,8 @@
   --vc-spotify-green-90: color-mix(in hsl, hsl(from var(--vc-spotify-green) h s calc(l - 40)), transparent 60%);
   --vc-spotify-green-80: color-mix(in hsl, hsl(from var(--vc-spotify-green) h s calc(l - 40)), transparent 40%);
 }
+
+/*Animations*/
 @keyframes bar-shimmer {
   from { background-position: 0 0; }
   to   { background-position: 200% 0; }
@@ -24,6 +27,7 @@
   100% { background-position: -200% center; }
 }
 
+/*Main player*/
 #vc-spotify-player {
     top: -8px;
     padding-top: 20px;
@@ -93,6 +97,7 @@
     backdrop-filter: blur(var(--blur-amount));
 }
 
+/*Progress bar customizations*/
 #vc-spotify-progress-bar > [class^="slider_"] > [class^="bar_"] > [class^="barFill_"]::before {
   content: "";
   position: fixed;
@@ -112,15 +117,18 @@
   animation: bar-shimmer 50s linear infinite;
 }
 
+/*Progress Time css*/
 .vc-spotify-progress-time {
   margin-top: 10px;
 }
 
+/*Song Title updates*/
 #vc-spotify-song-title {
   margin-top: -8px;
   margin-bottom: 2px;
 }
 
+/*Spinning album art*/
 #vc-spotify-album-image {
   border-radius: 50px;
   height: 110%;
