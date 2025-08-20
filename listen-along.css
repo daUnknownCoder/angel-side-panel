@@ -1,8 +1,11 @@
+/*Main Box*/
 .listeningAlong_e0cf27 {
   margin: -17px;
   background: transparent !important;
   position: relative;
 }
+
+/*Title (Listening Along)*/
 .listeningAlong_e0cf27 .title_b6c092 {
   position: absolute;
   top: 95px;
@@ -10,6 +13,8 @@
   font-size: 10px;
   z-index: 9999;
 }
+
+/*Text (On Spotify)*/
 .listeningAlong_e0cf27 .subtext__339d0 {
   position: absolute;
   top: 98px;
@@ -18,6 +23,8 @@
   left: 165px;
   z-index: 9999;
 }
+
+/*Listener Photo*/
 .container_b2d72f .avatar_e0cf27 {
   position: absolute;
   top: 55px;
@@ -25,12 +32,16 @@
   transform: rotate(42deg);
   z-index: 100;
 }
+
+/*Host Photo*/
 .container_b2d72f .avatar_b2d72f {
   position: absolute;
   top: 16px;
   right: 243px;
   transform: rotate(46deg) scale(1.2);
 }
+
+/*Close button margin*/
 .icons_e0cf27 {
   position: relative;
   transform: scale(0.8) translateY(95px) translateX(-100px);
