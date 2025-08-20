@@ -1,0 +1,51 @@
+.vc-spotify-lyrics {
+  margin-top: 2px;
+  margin-bottom: 10px;
+  &:has(*) {
+      backdrop-filter: brightness(0.8);
+  }
+  border-radius: 10px;
+}
+.vc-spotify-lyrics-prev {
+  opacity: 0.5;
+  font-family: 'Changa';
+  filter: blur(1px);
+  transition: all 0.8s ease;
+}
+.vc-spotify-lyrics-current {
+  font-size: 15px;
+  font-family: 'Nova Square';
+  padding-top: 3px;
+  padding-bottom: 5px;
+
+  background: linear-gradient(90deg, #00ffea 20%, #fff 40%, #00ffea 60%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
+
+.vc-spotify-lyrics-next {
+  opacity: 0.5;
+  font-family: 'Changa';
+  filter: blur(1px);
+  transition: all 0.8s ease;
+}
+.vc-spotify-lyrics-music-note {
+  opacity: 0.75;
+}
+
+section[class^="panels_"] {
+    background: var(--background-gradient-high, var(--background-base-lowest));
+    border: 0px;
+    border-left: 0px;
+}
+
+/* Spotify lyrics height change */
+.vc-spotify-lyrics:has(div) {
+  min-height: 7em;
+}
