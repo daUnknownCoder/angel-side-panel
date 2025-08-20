@@ -1,0 +1,135 @@
+:root, #vc-spotify-player {
+  --bg-color-discord: var(--bg-overlay-floating, var(--background-base-low, var(--background-secondary-alt)));
+  --bg-color-cover: hsl(from var(--vc-spotify-main-color) h clamp(40, s, 100) clamp(50, l, 70));
+  --bg-color-mixed: color-mix(in oklab, var(--bg-color-discord) 65%, var(--bg-color-cover));
+
+  --vc-spotify-green: hsl(from var(--vc-spotify-main-color) h clamp(50, s, 100) 50%);
+  --vc-spotify-green-90: color-mix(in hsl, hsl(from var(--vc-spotify-green) h s calc(l - 40)), transparent 60%);
+  --vc-spotify-green-80: color-mix(in hsl, hsl(from var(--vc-spotify-green) h s calc(l - 40)), transparent 40%);
+}
+@keyframes bar-shimmer {
+  from { background-position: 0 0; }
+  to   { background-position: 200% 0; }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+#vc-spotify-player {
+    top: -8px;
+    padding-top: 20px;
+    border-radius: 10px;
+    --blur-amount: 4px;
+    --normal-bg-colour: var(--bg-overlay-floating, var(--background-base-low, var(--background-secondary-alt)));
+
+    position:relative;
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+    > * {
+      filter: drop-shadow(0 0 10px var(--normal-bg-colour));
+    }
+    --vc-spotify-green: white;
+    .vc-spotify-button {
+      background: var(--vc-spotify-green-80);
+    }
+    .vc-spotify-button.vc-spotify-shuffle-on {
+      background: transparent;
+      background-color: rgba(24, 158, 57, 0.829);
+    }
+    .vc-spotify-button.vc-spotify-repeat-context {
+      background: transparent;
+      background-color: rgba(158, 84, 24, 0.829);
+    }
+    .vc-spotify-button.vc-spotify-repeat-track {
+      background: transparent;
+      background-color: rgba(24, 158, 57, 0.829);
+    }
+}
+
+#vc-spotify-player:hover {
+    --blur-amount: 0px;
+}
+#vc-spotify-player::before,
+#vc-spotify-player::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-out;
+}
+
+#vc-spotify-player::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+
+    background: var(--vc-spotify-track-image);
+    background-position: center top; 
+    background-size: cover; 
+    filter: brightness(0.8);
+    opacity: 0.5;
+}
+#vc-spotify-player:hover::before {
+    opacity: 0.7;
+}
+#vc-spotify-player::after {
+    backdrop-filter: blur(var(--blur-amount));
+}
+
+#vc-spotify-progress-bar > [class^="slider_"] > [class^="bar_"] > [class^="barFill_"]::before {
+  content: "";
+  position: fixed;
+  bottom: inherit;
+  margin-top: 7.5px;
+  padding-right: 2px;
+  top: inherit;
+  height: 8px;
+  width: inherit;
+  inset: 0;
+  border-radius: 4px;
+
+  /* album art texture */
+  background: var(--vc-spotify-track-image);
+  background-repeat: repeat-x;  /* tile horizontally */
+
+  animation: bar-shimmer 50s linear infinite;
+}
+
+.vc-spotify-progress-time {
+  margin-top: 10px;
+}
+
+#vc-spotify-song-title {
+  margin-top: -8px;
+  margin-bottom: 2px;
+}
+
+#vc-spotify-album-image {
+  border-radius: 50px;
+  height: 110%;
+  margin-right: 3px;
+  animation: spin 100s infinite linear;
+}
+
+#vc-spotify-player ~ [class^="container_"] {
+  background-color: var(--bg-color-mixed) !important;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
